@@ -1,0 +1,8 @@
+******* Begin log *******
+Message: New donor with name UZAIR M SYED created
+******* End log *******
+
+******* Begin log *******
+Message: Mail sent to foo@bar.com
+******* End log *******
+

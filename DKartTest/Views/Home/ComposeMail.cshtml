@@ -1,0 +1,57 @@
+﻿@model DKartTest.Models.MailDetailsModel
+
+@{
+    ViewBag.Title = "ComposeMail";
+}
+
+<h2>Compose Mail</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Compose mail</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ToMailId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ToMailId)
+            @Html.ValidationMessageFor(model => model.ToMailId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FromMailId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FromMailId)
+            @Html.ValidationMessageFor(model => model.FromMailId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Subject)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Subject)
+            @Html.ValidationMessageFor(model => model.Subject)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+
+        <p>
+            <input type="submit" value="Send" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>
+
